@@ -1,0 +1,42 @@
+@use 'variaveis.scss';
+
+.plans {
+    padding: 5.6vw;
+
+    h2 {
+        text-align: center;
+    }
+
+    &__list {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+        
+        &__item {
+            text-align: center;
+            padding: 60px 44px 44px;
+            max-width: 420px;
+            width: 100%;
+
+            &:nth-child(2) {
+                background-image: url(../../dist/images/fundo_combo_plus.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+
+            }
+
+            img {
+                width: 100%;
+            }
+
+            strong {
+                display: block;
+                margin-top: 24px;
+            }
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+}
