@@ -5,12 +5,14 @@
 @use 'available-devices.scss';
 @use 'faq.scss';
 @use 'footer.scss';
+@use 'header.scss';
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Avenir, sans-serif;
+    list-style: none;
 }
 
 .container {
@@ -46,26 +48,51 @@ body {
 
 .text--lg {
     @include text(18px);
+
+    @media (max-width: 768px) {
+        @include text(15px)
+    }
 }
 
 .text {
     @include text;
+
+    @media (max-width: 768px) {
+        @include text(14px)
+    }
 }
 
 .text--sm {
     @include text(12px);
+
+    @media (max-width: 768px) {
+        @include text(11px)
+    }
 }
 
 .title--lg {
     @include title(44px);
+
+    @media (max-width: 768px) {
+        @include title(26px)
+    }
 }
 
 .title {
     @include title;
+
+    @media (max-width: 768px) {
+        @include title(24px)
+    }
+
 }
 
 .title--sm {
     @include title(28px);
+
+    @media (max-width: 768px) {
+        @include title(22px)
+    }
 }
 
 .link--text {
@@ -75,17 +102,43 @@ body {
 }
 
 .button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 60px;
     font-size: 18px;
+    text-decoration: none;
     color: variaveis.$textColorSec;
-    background-color: #6421ff;
+    background-color: variaveis.$btnColor;
     text-transform: uppercase;
     border-radius: 4px;
-    margin-top: 2vw;
-    margin-bottom: 8px;
-    border: none;
+    border: 1px solid variaveis.$btnColor;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: lighten(variaveis.$btnColor, 3%);
+    }
+
+    &--secundary {
+        background-color: variaveis.$btnColorSec;
+        border: 1px solid variaveis.$btnColorSec;
+
+        &:hover {
+            background-color: lighten(variaveis.$btnColorSec, 3%);
+        }
+    }
+
+    &--black {
+        background-color: variaveis.$btnBlack;
+        border: 1px solid variaveis.$textColorSec;
+
+        &:hover {
+            background-color: variaveis.$textColorSec;
+            color: variaveis.$backColor;
+        }
+    }
 }
 
 .image-text-section {
@@ -93,6 +146,10 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
 
     
     img {
@@ -124,6 +181,13 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @media (max-width: 768px) {
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
+        
         }
     }
 }
