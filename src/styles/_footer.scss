@@ -1,0 +1,66 @@
+@use 'variaveis.scss';
+
+.footer {
+    padding: 26px 8px;
+
+    &__container {
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    &__logo {
+        width: 80px;
+        margin: 0 auto;
+    }
+
+    &__links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__item {
+            margin-bottom: 16px;
+            display: inline-block;
+
+            a {
+                text-decoration: none;
+                padding: 6px 16px;
+                display: block;
+
+                &:hover {
+                    color: variaveis.$textColorSec
+                }
+            }
+        }
+    }
+}
+
+.selector {
+    display: flex;
+    align-items: center;
+
+    img {
+        height: 18px;
+        width: 18px;
+    }
+
+    select {
+        background-color: transparent;
+        border: none;
+        color: variaveis.$textColor;
+        height: 38px;
+
+        &:hover {
+            color: variaveis.$textColorSec;
+        }
+
+        option {
+            background-color: variaveis.$backColor;
+        }
+    }
+}
